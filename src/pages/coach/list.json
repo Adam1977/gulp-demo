@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "biz-tel-button": "@/views/biz-components/tel-button",
+    "st-empty-content": "@/views/components/empty-content/index",
+    "st-icon": "@/views/components/icon/index"
+  }
+}

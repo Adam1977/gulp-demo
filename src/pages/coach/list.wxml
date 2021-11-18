@@ -1,0 +1,58 @@
+<wxs src="~@/wxs/utils.wxs" module="utils"/>
+<wxs module="showModule">
+  function isShow(source, par) {
+    return source.toString().indexOf(par) > -1
+  }
+  module.exports = {
+    isShow: isShow
+  }
+</wxs>
+<view class="st-coach-list theme-{{$theme}}">
+  <view class="st-coach-list__header">
+    <view class="st-coach-list__title font-medium">列表</view>
+    <view class="st-coach-list__total mg-b40">共{{coach.total}}人</view>
+    <view class="st-coach-list__shop">
+      <text class="fz-30 c-title">{{ shopName }}</text>
+      <!--<st-icon class="st-coach-list__icon-filter" type="filter" color="#222" size="30rpx"></st-icon>-->
+    </view>
+  </view>
+  <view class="st-coach-list__body">
+    <view
+      class="st-coach-list__item"
+      catchtap="toCoachInfoPage"
+      id="{{ item.id }}"
+      wx:for="{{ coach.list }}"
+      wx:key="index">
+      <view class="st-coach-list__avatar">
+        <image webp lazy-load src="{{utils.imageFilter({url:item.avatar.image_url,w:102,h:102}) }}" mode="aspectFill" class="st-coach-list__avatar-image"></image>
+      </view>
+      <view class="st-coach-list__info">
+        <view class="st-coach-list__name flex flex-left">
+          <text class="fz-32 c-title font-medium">{{ item.name }}</text>
+          <st-icon class="mg-l8 mg-r8" type="{{item.sex === 1 ? 'woman' : 'man'}}" color="{{item.sex === 1 ? '#FF505A' : '#3F66F6'}}" size="30rpx"></st-icon>
+          <text class="fz-20 c-text-light st-coach-list__level" wx:if="{{ showModule.isShow(show_content, 1) }}">{{item.level_name}}</text>
+        </view>
+        <view class="st-coach-list__price">
+          <block wx:if="{{item.sale_model === PRICE_SALE_MODEL.TALK_PRICE_MODEL}}">
+            <text class="c-danger fz-28">咨询定价</text>
+          </block>
+          <block wx:if="{{item.sale_model === PRICE_SALE_MODEL.MARK_PRICE_MODEL && item.price}}">
+            <text class="st-font c-danger fz-32">{{utils.setPrice(item.price)}}</text>
+            <text class="fz-24 c-text mg-l8">/课时起</text>
+          </block>
+        </view>
+        <view class="st-coach-list__tag text-ellipsis">
+          <text
+            wx:for="{{ item.tag }}"
+            wx:key="index"
+            wx:for-item="tagName"
+          >#{{ tagName }}</text>
+        </view>
+        <biz-tel-button class="st-coach-list__icon-tel" mobile="{{ item.mobile }}" wx:if="{{ showModule.isShow(show_content, 3) }}">
+          <image mode="aspectFill" src="https://styd-frontend.oss-cn-shanghai.aliyuncs.com/images/minaPro/course/tel-button.png"></image>
+        </biz-tel-button>
+      </view>
+    </view>
+  </view>
+  <st-empty-content type="noContent" wx:if="{{ dataReady && coach.list.length === 0 }}" title="{{'暂无' + versionConfig.coach + '信息'}}"></st-empty-content>
+</view>

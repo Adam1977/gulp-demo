@@ -1,0 +1,126 @@
+.st-invite-container {
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  &__price {
+    margin-top: 152rpx;
+    font-weight: 600;
+  }
+  &__num {
+    line-height: 100rpx;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  &__yuan {
+    line-height: 64rpx;
+    // letter-spacing: -14rpx;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  &__coupon {
+    line-height: 24rpx;
+  }
+  &__once {
+    margin-top: 96rpx;
+  }
+  &__invite {
+    height: 96rpx;
+    line-height: 88rpx;
+    width: 678rpx;
+    margin-top: 92rpx;
+    text-align: center;
+    background-repeat: no-repeat;
+  }
+  &__purple {
+    height: 88rpx;
+    width: 670rpx;
+  }
+  &__record {
+    display: flex;
+    justify-content: space-around;
+    width: 670rpx;
+    text-align: center;
+    margin-top: 152rpx;
+    margin-bottom: 68rpx;
+  }
+  &__item {
+    position: relative;
+    flex: 1;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -1rpx;
+      width: 2rpx;
+      height: 100%;
+      opacity: 0.25;
+    }
+    &:last-child::after {
+      display: none;
+    }
+    &-price {
+      line-height: 58rpx;
+      font-weight: bold;
+    }
+    &-yuan {
+      line-height: 28rpx;
+    }
+    &-text {
+    }
+  }
+  &__activity {
+    line-height: 28rpx;
+    // .mg-t(90rpx);
+  }
+  &__rules {
+    width: 670rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 30rpx;
+  }
+}
+.THEME() {
+  .st-invite-container {
+    background-image: url('https://styd-frontend.oss-cn-shanghai.aliyuncs.com/images/bg-coupon13.png');
+    background-size: 100% auto;
+    background-position: center -120rpx;
+    background-repeat: no-repeat;
+    &__price {
+      .c(#E4001E);
+    }
+    &__yuan {
+      // letter-spacing: -14rpx;
+    }
+    &__coupon {
+    }
+    &__once {
+    }
+    &__invite {
+      background-image: url('https://styd-frontend.oss-cn-shanghai.aliyuncs.com/images/bg-coupon-btn-red.png');
+      background-size: 100% 100%;
+    }
+    &__purple {
+      background-image: url('https://styd-frontend.oss-cn-shanghai.aliyuncs.com/images/bg-coupon-btn-blue.png');
+    }
+    &__record {
+    }
+    &__item {
+      &::after {
+        background-color: #a70101;
+      }
+      &-text {
+        color: rgba(167, 1, 1, 0.45);
+      }
+    }
+    &__activity {
+      color: rgba(255, 255, 255, 0.65);
+      // .mg-t(90rpx);
+    }
+    &__rules {
+      color: rgba(255, 255, 255, 0.65);
+    }
+  }
+}

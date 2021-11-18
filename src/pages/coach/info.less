@@ -1,0 +1,94 @@
+.st-coach-info {
+  min-height: calc(100vh - 710rpx);
+  .course-item {
+    &__modal {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+  }
+  &__cover {
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+  &__coach-btn {
+    right: 40rpx;
+    top: 620rpx;
+    z-index: 2;
+    &-icon {
+      vertical-align: 5%;
+    }
+  }
+  &__body {
+    z-index: 3;
+    border-top-left-radius: 40rpx;
+    border-top-right-radius: 40rpx;
+  }
+  &__name {
+    vertical-align: middle;
+    display: flex;
+    height: 88rpx;
+    align-items: center;
+  }
+  &__share {
+    top: 0;
+    right: 0;
+  }
+  &__tag {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+  }
+  &__certificate-list {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+  &__medal {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    max-height: 108rpx;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    .text__view {
+      max-height: 108rpx;
+      overflow: hidden;
+      white-space: normal;
+      text-align: center;
+    }
+  }
+  &__courses {
+    &-bg {
+      left: 0;
+      top: 0;
+    }
+    &-content {
+      bottom: 40rpx;
+      left: 28rpx;
+    }
+    &-title {
+      z-index: 2;
+    }
+    &-text {
+      z-index: 2;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "st-cancel-pay": "@/views/biz-components/cancel-pay/index",
+    "groupbuy-board": "@/views/biz-components/groupbuy-board/index",
+    "groupbuy-btn": "@/views/biz-components/groupbuy-btn/index",
+    "page-appraise-course-coach-list": "@/views/page-components/course/appraise/course-coach-list/index",
+    "st-bottom-container": "@/views/components/bottom-container/index",
+    "st-button": "@/views/components/button/index",
+    "st-icon": "@/views/components/icon/index",
+    "st-share-btn": "@/views/components/share-btn/index",
+    "st-spacer": "@/views/components/spacer/index"
+  }
+}

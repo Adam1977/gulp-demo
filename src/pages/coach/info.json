@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "详情",
+  "usingComponents": {
+    "biz-more-info": "@/views/biz-components/more-info/index",
+    "biz-share-button-popup": "@/views/biz-components/share-button-popup/index",
+    "page-appraise-course-coach-list": "@/views/page-components/course/appraise/course-coach-list/index",
+    "st-empty-content": "@/views/components/empty-content/index",
+    "st-icon": "@/views/components/icon/index",
+    "st-tag": "@/views/components/tag/index"
+  }
+}
